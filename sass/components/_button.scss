@@ -7,8 +7,12 @@
     &:visited  {
         @include button;
     } 
+    &, {
+        @include button;
+    }
 
-    &:hover {
+    &:hover,
+    &:focus {
         transform: translateY(-3rem);
         box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
         
@@ -18,8 +22,10 @@
         }
     }
 
-    &:active {
+    &:active,
+    &:focus {
         transform: translateY(-1rem);
+        outline: none;
         box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
     }
 
