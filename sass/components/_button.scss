@@ -1,19 +1,14 @@
 .btn {
 
-    &:link {
-        @include button;
-    }
-
-    &:visited  {
-        @include button;
-    } 
-    &, {
+    &,
+    &:link,
+    &:visited {
         @include button;
     }
 
     &:hover,
     &:focus {
-        transform: translateY(-3rem);
+        transform: translateY(-.3rem);
         box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
         
         &::after {
