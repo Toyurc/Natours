@@ -7,6 +7,28 @@
 }
 html {
     font-size: 62.5%;
+
+    /*
+    this one is uneccessary because the next one will be executed because it also lower
+    @include respond(phone) {
+        font-size: 50%;
+    }
+    */
+
+    
+    @include respond(tab-land) {
+        font-size: 56.5%;
+    }
+
+    // this one is lower because of specificity
+    @include respond(tab-port) {
+        font-size: 50%; //1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
+     
 }
 
 body {
