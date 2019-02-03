@@ -98,9 +98,10 @@
     &__icon {
         position: relative;
         margin-top: 3.45rem;
+
         &,
         &::before,
-        &::after{
+        &::after {
             width: 3rem;
             height: 2px;
             background-color: $color-grey-dark-3;
@@ -108,34 +109,65 @@
         }
 
         &::before,
-        &::after{
+        &::after {
             position: absolute;
             content: "";
             left: 0;
             transition: all .2s;
         }
 
-        &::before{ top:-.8rem;}
-        &::after{ top: .8rem;}
+        &::before {
+            top: -.8rem;
+        }
+
+        &::after {
+            top: .8rem;
+        }
     }
 
-    &__button:hover &__icon::before{
+    &__button:hover &__icon::before {
         top: -1rem;
     }
 
-    &__button:hover &__icon::after{
+    &__button:hover &__icon::after {
         top: 1rem;
     }
 
-    &__checkbox:checked + &__button &__icon {
+    &__checkbox:checked+&__button &__icon {
         background-color: transparent;
     }
-    &__checkbox:checked + &__button &__icon::before {
+
+    &__checkbox:checked+&__button &__icon::before {
         top: 0;
         transform: rotate(135deg);
     }
-    &__checkbox:checked + &__button &__icon::after {
+
+    &__checkbox:checked+&__button &__icon::after {
         top: 0;
         transform: rotate(-135deg);
+    }
+
+    @include respond(tab-port) {
+        &__button {
+            top: 4rem;
+            right: 4rem;
+        }
+
+        &__background {
+            top: 4.5rem;
+            right: 4.5rem;
+        }
+    }
+
+    @include respond(phone) {
+        &__button {
+            top: 3rem;
+            right: 3rem;
+        }
+
+        &__background {
+            top: 3.5rem;
+            right: 3.5rem;
+        }
     }
 }

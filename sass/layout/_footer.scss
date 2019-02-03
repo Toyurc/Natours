@@ -59,4 +59,18 @@
         float: right;
     }
 
+    @include respond(tab-port){
+        padding: 8rem 0;
+
+        &__navigation {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__copyright {
+            width: 80%;
+            float: none;
+        }
+    }
+
 }
